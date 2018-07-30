@@ -17,8 +17,8 @@
         </q-btn>
 
         <q-toolbar-title>
-          Quasar App Batch
-          <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
+          Day 2: Activity
+          <div slot="subtitle">v{{ $q.version }}</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>

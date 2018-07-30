@@ -45,7 +45,7 @@ export default {
     this.$dbCon.authenticate()
     this.$dbCon.services['todo-auth'].onDataChange(data => {
       this.todos = data
-      console.log(this.todos)
+      console.log('CHANGED', this.todos)
     })
 
     console.log(this.$dbCon)
@@ -71,10 +71,6 @@ export default {
         done: false,
         date: new Date()
       })
-      this.$dbCon.services['todo-auth'].find()
-        .then(data => {
-          this.todos = data.data
-        })
     },
     edit () {},
     createUser () {
@@ -99,7 +95,7 @@ export default {
       })
     },
     remove (id) {
-      this.$dbCon.services['todo-auth'].remove(id)
+      this.$dbCon.services['todo-auth'].remove(id).then(data => console.log(this.$dbCon.services['todo-auth'].data))
     }
   }
 }
